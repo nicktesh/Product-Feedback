@@ -101,6 +101,13 @@ button {
 #feedback-page {
   padding: 40px 0;
 
+  #main-container {
+    @media screen and (max-width: 992px) {
+      max-width: 850px;
+      padding: 20px;
+    }
+  }
+
   #side-panel {
     padding: 15px;
     position: relative;
@@ -112,6 +119,15 @@ button {
       padding-top: 15px;
 
       .panel-boxes {
+        @media screen and (max-width: 992px) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
         .header-box {
           display: grid;
           align-content: flex-end;
@@ -128,6 +144,12 @@ button {
           color: $white;
           height: 150px;
 
+          @media screen and (max-width: 992px) {
+            width: 33.333%;
+            margin-bottom: 0;
+            height: 220px;
+          }
+
           h3 {
             color: $white;
             font-size: 1.1em;
@@ -139,6 +161,14 @@ button {
           margin-bottom: 30px;
           border-radius: $border-radius;
 
+          @media screen and (max-width: 992px) {
+            width: 33.333%;
+            margin: 0 10px;
+            margin-bottom: 0;
+            height: 220px;
+            padding: 20px;
+          }
+
           button {
             background: $primary-light;
             color: $primary-regular;
@@ -149,6 +179,18 @@ button {
             width: fit-content;
             border-radius: $border-radius;
             transition: ease-in 0.2s;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+            @media screen and (max-width: 992px) {
+              font-size: 0.8em;
+              padding: 8px 15px;
+            }
 
             &:hover {
               background-color: $primary-regular;
@@ -166,6 +208,12 @@ button {
           padding: 30px;
           margin-bottom: 30px;
           border-radius: $border-radius;
+
+          @media screen and (max-width: 992px) {
+            width: 33.333%;
+            margin-bottom: 0;
+            height: 220px;
+          }
 
           .title-box {
             display: flex;
@@ -265,6 +313,20 @@ button {
         color: $white;
         border-radius: $border-radius;
         margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      #feedbackBtn {
+        background-color: $primary-alt;
+        color: $white;
+        padding: 8px 15px;
+        border-radius: $border-radius;
       }
     }
   }
@@ -352,11 +414,11 @@ button {
   }
 }
 
-.hide {
+#feedback-page .hide {
   animation: hide 0.3s ease 0s 1 normal forwards;
   transform-origin: center;
 }
-.show {
+#feedback-page .show {
   animation: show 0.3s ease 0s 1 normal forwards;
   transform-origin: center;
 }

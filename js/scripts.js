@@ -53,3 +53,12 @@ if (document.getElementById("feedback-page")) {
     });
   }
 }
+
+//
+// Allows website users to add feedback //
+//
+
+let feedbackBtn = document.getElementById("feedbackBtn");
+let feedbackModal = document.getElementById("feedbackModal");
+
+feedbackBtn.addEventListener("click", () => {});
