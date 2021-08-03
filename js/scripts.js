@@ -72,12 +72,16 @@ allFeedbackPosts.prepend(feedback);
 feedbackForm.addEventListener("submit", (event) => {
   // If any of the inputs are blank, gives error message
   event.preventDefault();
-  if (
-    title.value === "" ||
-    description.value === "" ||
-    category.value === "Select a Category"
-  ) {
-    alert("Fix this NOW");
+  if (category.value === "Select a Category") {
+    // Shows a message above the category select field
+    let catSelectMsg = document.getElementById("catSelectMsg");
+    catSelectMsg.classList.remove("hidden");
+    catSelectMsg.classList.add("fadeIn");
+    // Waits 4 seconds before making the message fade
+    setTimeout(function () {
+      catSelectMsg.classList.remove("fadeIn");
+      catSelectMsg.classList.add("hidden");
+    }, 4000);
     // If all inputs are successful, it creates the feedback box and prepends it
   } else {
     // Sets the filter data as the category selected, and makes it lowercase so the filter works
@@ -96,11 +100,15 @@ feedbackForm.addEventListener("submit", (event) => {
         <p>${description.value}</p>
         <div class="post-category">${category.value}</div>
       </div>
-      <div class="post-comments">
-        <img src="assets/img/comment-alt-solid.svg">
-        <p>0</p>
+      <div class="delete-box">
+        <div class="post-comments">
+          <div class="post-comments-inner">
+            <img src="assets/img/comment-alt-solid.svg">
+            <p>0</p>
+          </div>
+        </div>
+        <button class="delete-btn">DELETE</button>
       </div>
-      <button class="delete-btn">X</button>
     </div>
   </div>`;
     allFeedbackPosts.prepend(feedback);
@@ -140,44 +148,3 @@ for (let i = 0; i < deleteBtn.length; i++) {
     localStorage.removeItem("newFeedback", feedback.innerHTML);
   });
 }
-
-//
-// Allows users to upvote and downvote suggestions
-//
-
-let totalCountInner = document.querySelectorAll(".total-count-inner");
-let totalVotes = document.querySelectorAll(".totalVotes");
-
-for (let i = 0; i < totalCountInner.length; i++) {
-  totalCountInner[i].addEventListener("click", () => {
-    for (let j = 0; j < totalVotes.length; j++) {
-      let count = Number(totalVotes[j].innerHTML);
-
-      if (count === count) {
-        totalVotes[j].innerHTML = count + 1;
-      } else {
-        return false;
-      }
-    }
-  });
-}
-
-// let totalCountInner = document.querySelectorAll(".total-count-inner");
-// let totalVotes = document.querySelectorAll(".totalVotes");
-
-// totalVotes.forEach(function (i) {
-//   i.addEventListener("click", function () {
-//     console.log(i);
-//   });
-// });
-
-// for (i of totalCountInner) {
-//   let totalValue = Number(totalVotes.innerHTML);
-//   i.addEventListener("click", () => {
-//     if (totalValue === totalValue) {
-//       totalVotes.innerHTML = totalValue + 1;
-//     } else {
-//       return false;
-//     }
-//   });
-// }

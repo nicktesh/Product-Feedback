@@ -4,6 +4,7 @@ $primary-light: #f2f4ff;
 $primary-regular: #4661e6;
 $primary-dark: #373e68;
 $primary-alt: #ae1feb;
+$primary-hover: #cc62fa;
 $white: #ffffff;
 $black: #000000;
 $border-radius: 10px;
@@ -94,6 +95,21 @@ button {
   border: 0;
   outline: none;
   padding: 0;
+}
+
+.primary-btn {
+  background-color: $primary-alt;
+  color: $white;
+  padding: 8px 15px;
+  border-radius: $border-radius;
+  border: 0;
+  outline: none;
+  transition: ease 0.2s;
+  font-weight: 700;
+}
+
+.primary-btn:hover {
+  background-color: $primary-hover;
 }
 
 /* Product Feedback Page Main */
@@ -328,13 +344,6 @@ button {
         //   display: none;
         // }
       }
-
-      #feedbackBtn {
-        background-color: $primary-alt;
-        color: $white;
-        padding: 8px 15px;
-        border-radius: $border-radius;
-      }
     }
   }
 
@@ -369,14 +378,12 @@ button {
           max-width: 50px;
           padding: 10px;
           height: fit-content;
-          -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-          -khtml-user-select: none; /* Konqueror HTML */
-          -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
           img {
             width: 100%;
             max-width: 13px;
@@ -387,7 +394,6 @@ button {
       .post-info {
         width: 80%;
         padding: 0 15px;
-
         h3 {
           color: $primary-dark;
           font-weight: 700;
@@ -407,12 +413,31 @@ button {
           border-radius: $border-radius;
         }
       }
-      .post-comments {
+      .delete-box {
+        display: flex;
+        flex-direction: column;
         width: 10%;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .delete-btn {
+          font-size: 0.8em;
+          color: $primary-regular;
+          &:hover {
+            color: $primary-dark;
+          }
+        }
+      }
+      .post-comments {
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-start;
         color: $primary-dark;
+
+        .post-comments-inner {
+          display: flex;
+          align-items: center;
+        }
 
         img {
           width: 100%;
@@ -423,6 +448,9 @@ button {
           color: $primary-dark;
           font-weight: 700;
         }
+      }
+      .alt {
+        width: 10%;
       }
     }
   }
@@ -469,5 +497,43 @@ button {
   #feedbackForm {
     display: flex;
     flex-direction: column;
+  }
+
+  // The modal
+  #feedbackModal {
+    h3 {
+      font-size: 1.4em;
+      margin: 0;
+    }
+    label {
+      font-weight: 700;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+    span {
+      color: $primary-alt;
+    }
+    #feedbackDescInput {
+      min-height: 150px;
+    }
+    #catSelectMsg {
+      color: red;
+    }
+    .fadeIn {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }

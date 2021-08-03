@@ -85,7 +85,7 @@
                         <p>Planned</p>
                       </div>
                       <div>
-                        <p><strong>2</strong></p>
+                        <p><strong>1</strong></p>
                       </div>
                     </div>
                     <div class="progress-cat">
@@ -96,7 +96,7 @@
                         <p>In-Progress</p>
                       </div>
                       <div>
-                        <p><strong>5</strong></p>
+                        <p><strong>2</strong></p>
                       </div>
                     </div>
                     <div class="complete-cat">
@@ -107,7 +107,7 @@
                         <p>Completed</p>
                       </div>
                       <div>
-                        <p><strong>1</strong></p>
+                        <p><strong>4</strong></p>
                       </div>
                     </div>
                   </div>
@@ -121,6 +121,7 @@
                 Total Suggestions
                 <button
                   id="feedbackBtn"
+                  class="primary-btn"
                   data-bs-toggle="modal"
                   data-bs-target="#feedbackModal"
                 >
@@ -134,7 +135,7 @@
                     <div class="total-count-box">
                       <div class="total-count-inner">
                         <img src="assets/img/chevron-up-solid.svg" />
-                        <p class="totalVotes">112</p>
+                        <p class="totalVotes">8</p>
                       </div>
                     </div>
                     <div class="post-info">
@@ -145,9 +146,11 @@
                       </p>
                       <div class="post-category">Enhancement</div>
                     </div>
-                    <div class="post-comments">
-                      <img src="assets/img/comment-alt-solid.svg" />
-                      <p>2</p>
+                    <div class="post-comments alt">
+                      <div class="post-comments-inner">
+                        <img src="assets/img/comment-alt-solid.svg" />
+                        <p>1</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -156,7 +159,7 @@
                     <div class="total-count-box">
                       <div class="total-count-inner">
                         <img src="assets/img/chevron-up-solid.svg" />
-                        <p class="totalVotes">76</p>
+                        <p class="totalVotes">54</p>
                       </div>
                     </div>
                     <div class="post-info">
@@ -167,9 +170,11 @@
                       </p>
                       <div class="post-category">Feature</div>
                     </div>
-                    <div class="post-comments">
-                      <img src="assets/img/comment-alt-solid.svg" />
-                      <p>2</p>
+                    <div class="post-comments alt">
+                      <div class="post-comments-inner">
+                        <img src="assets/img/comment-alt-solid.svg" />
+                        <p>5</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -178,7 +183,7 @@
                     <div class="total-count-box">
                       <div class="total-count-inner">
                         <img src="assets/img/chevron-up-solid.svg" />
-                        <p class="totalVotes">84</p>
+                        <p class="totalVotes">21</p>
                       </div>
                     </div>
                     <div class="post-info">
@@ -189,9 +194,11 @@
                       </p>
                       <div class="post-category">UI</div>
                     </div>
-                    <div class="post-comments">
-                      <img src="assets/img/comment-alt-solid.svg" />
-                      <p>2</p>
+                    <div class="post-comments alt">
+                      <div class="post-comments-inner">
+                        <img src="assets/img/comment-alt-solid.svg" />
+                        <p>2</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -211,17 +218,26 @@
       >
         <div class="modal-dialog">
           <div class="modal-content">
+            <div class="modal-header">
+              <h3>Add Feedback</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
             <div class="modal-body">
               <form id="feedbackForm">
-                <h3>Add Feedback</h3>
                 <label for="feedbackTitleInput"
-                  >Suggestion Title <span>*</span></label
+                  >Title of suggestion <span>*</span></label
                 >
                 <input
                   type="text"
                   id="feedbackTitleInput"
                   name="feedbackTitleInput"
                   class="form-control"
+                  required
                 />
                 <br />
                 <label for="feedbackDescInput"
@@ -232,12 +248,19 @@
                   id="feedbackDescInput"
                   name="feedbackDescInput"
                   class="form-control"
+                  required
                 ></textarea>
                 <br />
+                <p id="catSelectMsg" class="hidden">
+                  Please select a valid category
+                </p>
                 <label for="feedbackCategoryInput"
                   >Choose suggestion category <span>*</span></label
                 >
-                <select id="feedbackCategoryInput" class="form-control">
+                <select
+                  id="feedbackCategoryInput"
+                  class="form-control required"
+                >
                   <option selected disabled>Select a Category</option>
                   <option>UI</option>
                   <option>UX</option>
@@ -246,7 +269,7 @@
                   <option>Feature</option>
                 </select>
                 <br />
-                <input value="Submit" type="submit" />
+                <input value="Submit" type="submit" class="primary-btn" />
               </form>
             </div>
           </div>
