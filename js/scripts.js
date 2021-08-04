@@ -131,6 +131,11 @@ feedbackForm.addEventListener("submit", (event) => {
     });
   }
 
+  // Updates the total feedback count when adding
+  let totalSugs = document.getElementById("totalSugs");
+  let totalFeedback = document.querySelectorAll(".feedback-post-box");
+  totalSugs.innerText = totalFeedback.length;
+
   // Stores the feedback box into localStorage
   localStorage.setItem("newFeedback", feedback.innerHTML);
 });
@@ -146,5 +151,18 @@ for (let i = 0; i < deleteBtn.length; i++) {
     deleteBtn[i].parentElement.parentElement.parentElement.remove();
     // Removes the selected feedback box from localStorage
     localStorage.removeItem("newFeedback", feedback.innerHTML);
+
+    // Updates the total feedback count when deleting
+    let totalSugs = document.getElementById("totalSugs");
+    let totalFeedback = document.querySelectorAll(".feedback-post-box");
+    totalSugs.innerText = totalFeedback.length;
   });
 }
+
+//
+// Sets the total count of Suggestions on load //
+//
+
+let totalSugs = document.getElementById("totalSugs");
+let totalFeedback = document.querySelectorAll(".feedback-post-box");
+totalSugs.innerText = totalFeedback.length;

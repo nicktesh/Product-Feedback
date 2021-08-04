@@ -48,7 +48,7 @@ h5,
 h6 {
   font-family: $primary-font;
   color: $primary-dark;
-  line-height: 0.8;
+  line-height: 1.2em;
 }
 
 h1,
@@ -343,6 +343,22 @@ button {
         // @media screen and (max-width: 768px) {
         //   display: none;
         // }
+
+        .suggestion-box {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 100%;
+            max-width: 20px;
+            margin-right: 20px;
+          }
+
+          h3 {
+            color: $white;
+            margin: 0;
+          }
+        }
       }
     }
   }
