@@ -126,18 +126,22 @@ feedbackForm.addEventListener("submit", (event) => {
     deleteBtn[i].addEventListener("click", () => {
       // Removes the entire div and contents created from feedbackForm
       deleteBtn[i].parentElement.parentElement.parentElement.remove();
+      // Updates the total feedback count when adding
+      let totalSugs = document.getElementById("totalSugs");
+      let totalFeedback = document.querySelectorAll(".feedback-post-box");
+      totalSugs.innerText = totalFeedback.length;
       // Removes the selected feedback box from localStorage
       localStorage.removeItem("newFeedback", feedback.innerHTML);
     });
   }
 
+  // Stores the feedback box into localStorage
+  localStorage.setItem("newFeedback", feedback.innerHTML);
+
   // Updates the total feedback count when adding
   let totalSugs = document.getElementById("totalSugs");
   let totalFeedback = document.querySelectorAll(".feedback-post-box");
   totalSugs.innerText = totalFeedback.length;
-
-  // Stores the feedback box into localStorage
-  localStorage.setItem("newFeedback", feedback.innerHTML);
 });
 
 //
@@ -149,35 +153,36 @@ for (let i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", () => {
     // Removes the entire div and contents created from feedbackForm
     deleteBtn[i].parentElement.parentElement.parentElement.remove();
-    // Removes the selected feedback box from localStorage
-    localStorage.removeItem("newFeedback", feedback.innerHTML);
-
-    // Updates the total feedback count when deleting
+    // Updates the total feedback count when adding
     let totalSugs = document.getElementById("totalSugs");
     let totalFeedback = document.querySelectorAll(".feedback-post-box");
     totalSugs.innerText = totalFeedback.length;
+    // Removes the selected feedback box from localStorage
+    localStorage.removeItem("newFeedback", feedback.innerHTML);
+  });
+}
+
+//
+// Adds mobile dropdown
+//
+if (document.getElementById("feedback-page")) {
+  let mobileDropDown = document.getElementById("mobileDropDown");
+  let sidePanelInner = document.getElementById("sidePanelInner");
+  let sidePanelMobile = document.getElementById("side-panel-mobile");
+
+  mobileDropDown.addEventListener("click", () => {
+    mobileDropDown.classList.toggle("fa-chevron-up");
+    sidePanelMobile.classList.toggle("expandMobilePanel");
+    sidePanelInner.classList.toggle("fadeInMobile");
+    sidePanelInner.classList.toggle("showMobilePanel");
   });
 }
 
 //
 // Sets the total count of Suggestions on load //
 //
-
-let totalSugs = document.getElementById("totalSugs");
-let totalFeedback = document.querySelectorAll(".feedback-post-box");
-totalSugs.innerText = totalFeedback.length;
-
-//
-// Adds mobile dropdown
-//
-
-let mobileDropDown = document.getElementById("mobileDropDown");
-let sidePanelInner = document.getElementById("sidePanelInner");
-let sidePanelMobile = document.getElementById("side-panel-mobile");
-
-mobileDropDown.addEventListener("click", () => {
-  mobileDropDown.classList.toggle("fa-chevron-up");
-  sidePanelMobile.classList.toggle("expandMobilePanel");
-  sidePanelInner.classList.toggle("fadeInMobile");
-  sidePanelInner.classList.toggle("showMobilePanel");
-});
+if (document.getElementById("feedback-page")) {
+  let totalSugs = document.getElementById("totalSugs");
+  let totalFeedback = document.querySelectorAll(".feedback-post-box");
+  totalSugs.innerText = totalFeedback.length;
+}

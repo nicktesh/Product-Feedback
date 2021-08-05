@@ -89,6 +89,12 @@ button {
   -webkit-transition: ease 0.2s;
   transition: ease 0.2s;
   font-weight: 700; }
+  @media screen and (max-width: 768px) {
+    .primary-btn {
+      padding: 8px 10px; } }
+  @media screen and (max-width: 768px) {
+    .primary-btn span {
+      display: none; } }
 
 .primary-btn:hover {
   background-color: #cc62fa; }
@@ -380,9 +386,16 @@ button {
             width: 100%;
             max-width: 20px;
             margin-right: 20px; }
+            @media screen and (max-width: 768px) {
+              #feedback-page #post-section .post-section-inner .post-header .suggestion-box img {
+                max-width: 15px; } }
           #feedback-page #post-section .post-section-inner .post-header .suggestion-box h3 {
             color: #ffffff;
             margin: 0; }
+            @media screen and (max-width: 768px) {
+              #feedback-page #post-section .post-section-inner .post-header .suggestion-box h3 {
+                text-align: center;
+                font-size: 14px; } }
   #feedback-page .feedback-post-box {
     margin-bottom: 15px;
     background-color: #ffffff;
