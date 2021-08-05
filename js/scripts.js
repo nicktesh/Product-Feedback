@@ -166,3 +166,18 @@ for (let i = 0; i < deleteBtn.length; i++) {
 let totalSugs = document.getElementById("totalSugs");
 let totalFeedback = document.querySelectorAll(".feedback-post-box");
 totalSugs.innerText = totalFeedback.length;
+
+//
+// Adds mobile dropdown
+//
+
+let mobileDropDown = document.getElementById("mobileDropDown");
+let sidePanelInner = document.getElementById("sidePanelInner");
+let sidePanelMobile = document.getElementById("side-panel-mobile");
+
+mobileDropDown.addEventListener("click", () => {
+  mobileDropDown.classList.toggle("fa-chevron-up");
+  sidePanelMobile.classList.toggle("expandMobilePanel");
+  sidePanelInner.classList.toggle("fadeInMobile");
+  sidePanelInner.classList.toggle("showMobilePanel");
+});

@@ -51,63 +51,74 @@
       <div class="container" id="main-container">
         <div class="row">
           <div class="col-lg-3" id="side-panel">
-            <div class="side-panel-inner">
-              <div class="panel-boxes">
-                <div class="header-box">
+            <div id="side-panel-mobile">
+              <div class="header-box-mobile">
+                <div class="mobile-inner">
                   <h3>Application Name</h3>
                   <p>Feedback Board</p>
                 </div>
-                <div class="post-filter-box">
-                  <div class="filters" id="filters">
-                    <button class="filter active" data-filter="all">ALL</button>
-                    <button class="filter" data-filter="ui">UI</button>
-                    <button class="filter" data-filter="ux">UX</button>
-                    <button class="filter" data-filter="enhancement">
-                      Enchancement
-                    </button>
-                    <button class="filter" data-filter="bug">Bug</button>
-                    <button class="filter" data-filter="feature">
-                      Feature
-                    </button>
+                <i class="fas fa-chevron-down" id="mobileDropDown"></i>
+              </div>
+              <div class="side-panel-inner" id="sidePanelInner">
+                <div class="panel-boxes">
+                  <div class="header-box">
+                    <h3>Application Name</h3>
+                    <p>Feedback Board</p>
                   </div>
-                </div>
-                <div class="status-box">
-                  <div class="title-box">
-                    <h3>Roadmap</h3>
-                    <a href="#">View</a>
+                  <div class="post-filter-box">
+                    <div class="filters" id="filters">
+                      <button class="filter active" data-filter="all">
+                        ALL
+                      </button>
+                      <button class="filter" data-filter="ui">UI</button>
+                      <button class="filter" data-filter="ux">UX</button>
+                      <button class="filter" data-filter="enhancement">
+                        Enchancement
+                      </button>
+                      <button class="filter" data-filter="bug">Bug</button>
+                      <button class="filter" data-filter="feature">
+                        Feature
+                      </button>
+                    </div>
                   </div>
-                  <div class="status-cats">
-                    <div class="planned-cat">
-                      <div>
-                        <img src="assets/img/orange-status.svg" />
-                      </div>
-                      <div>
-                        <p>Planned</p>
-                      </div>
-                      <div>
-                        <p><strong>1</strong></p>
-                      </div>
+                  <div class="status-box">
+                    <div class="title-box">
+                      <h3>Roadmap</h3>
+                      <a href="#">View</a>
                     </div>
-                    <div class="progress-cat">
-                      <div>
-                        <img src="assets/img/purple-status.svg" />
+                    <div class="status-cats">
+                      <div class="planned-cat">
+                        <div>
+                          <img src="assets/img/orange-status.svg" />
+                        </div>
+                        <div>
+                          <p>Planned</p>
+                        </div>
+                        <div>
+                          <p><strong>1</strong></p>
+                        </div>
                       </div>
-                      <div>
-                        <p>In-Progress</p>
+                      <div class="progress-cat">
+                        <div>
+                          <img src="assets/img/purple-status.svg" />
+                        </div>
+                        <div>
+                          <p>In-Progress</p>
+                        </div>
+                        <div>
+                          <p><strong>2</strong></p>
+                        </div>
                       </div>
-                      <div>
-                        <p><strong>2</strong></p>
-                      </div>
-                    </div>
-                    <div class="complete-cat">
-                      <div>
-                        <img src="assets/img/green-status.svg" />
-                      </div>
-                      <div>
-                        <p>Completed</p>
-                      </div>
-                      <div>
-                        <p><strong>4</strong></p>
+                      <div class="complete-cat">
+                        <div>
+                          <img src="assets/img/green-status.svg" />
+                        </div>
+                        <div>
+                          <p>Completed</p>
+                        </div>
+                        <div>
+                          <p><strong>4</strong></p>
+                        </div>
                       </div>
                     </div>
                   </div>
