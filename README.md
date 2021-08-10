@@ -7,6 +7,7 @@ The purpose of this page is to allow users to add suggestions based on a web app
 - Users suggestions are stored in Local Storage.
 - The form requires a title, description, and a category to be selected before posting.
 - Users can sort through all the suggestions by category.
+- App tracks the total amount of suggestions (when added/deleted as well).
 
 # Tech
 - HTML5
