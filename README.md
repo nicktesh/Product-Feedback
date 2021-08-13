@@ -12,5 +12,5 @@ The purpose of this page is to allow users to add suggestions based on a web app
 # Tech
 - HTML5
 - CSS3
-- Bootstrap 5/4
+- Bootstrap 4/5
 - Javascript
